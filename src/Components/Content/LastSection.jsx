@@ -4,7 +4,7 @@ import PieChart from "./PieChart";
 
 const LastSection = () => {
   return (
-    <div className="grid grid-cols-4 gap-x-6">
+    <div className="grid grid-cols-7 gap-x-6">
       <PieChart />
       <Converter />
       <History />

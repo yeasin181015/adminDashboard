@@ -75,7 +75,7 @@ const Sidebar = () => {
                   className={`py-2 flex items-center justify-center rounded-lg cursor-pointer font-medium text-lg leading-5 ${
                     selectedTab === item.name && theme
                       ? "bg-[#D5E6FB] text-[#0060FF]"
-                      : selectedTab === item.name && theme === "dark"
+                      : selectedTab === item.name && !theme
                       ? "bg-[#062141] text-[#0060FF]"
                       : theme
                       ? "text-black"
@@ -100,7 +100,7 @@ const Sidebar = () => {
                     }}
                   />
                 )}
-                {item.name === "Setting" && theme !== 1 && (
+                {item.name === "Setting" && !theme && (
                   <hr
                     className="mt-4 mb-4"
                     style={{

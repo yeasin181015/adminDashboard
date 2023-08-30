@@ -40,7 +40,7 @@ const ItemCard = ({ item }) => {
           <img src={item.graph} alt="" width="100%" height="100%" />
         </div>
       </div>
-      <div className="flex space-x-12 justify-between items-center">
+      <div className="flex justify-between items-center">
         <p className="text-[#626D7D] text-sm font-medium">PIN Daily</p>
         <p
           className={`${

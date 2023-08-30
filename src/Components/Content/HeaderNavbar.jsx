@@ -27,9 +27,12 @@ const HeaderNavbar = () => {
           </div>
         </div>
 
-        <div className="flex justify-end">
-          <div className="flex items-center space-x-8">
-            <label class="relative inline-flex items-center mb-5 cursor-pointer">
+        <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-2">
+            <label className={`${!theme ? "text-white" : "text-black"} mb-1`}>
+              theme
+            </label>
+            <label class="mt-4 relative inline-flex items-center mb-5 cursor-pointer">
               <input
                 type="checkbox"
                 value=""
@@ -39,36 +42,31 @@ const HeaderNavbar = () => {
               />
               <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
+          </div>
+          <div>
             <img src="/icons/notification.svg" width={26} height={28} alt="" />
-            <div
-              className={`${theme ? "bg-[#F2F8FF]" : "bg-black"} rounded-xl`}
-            >
-              <div className="flex items-center space-x-3 p-2">
-                <img
-                  src="/icons/profileIcon.svg"
-                  width={45}
-                  height={45}
-                  alt=""
-                />
+          </div>
+          <div className={`${theme ? "bg-[#F2F8FF]" : "bg-black"} rounded-xl`}>
+            <div className="flex items-center space-x-3 p-2">
+              <img src="/icons/profileIcon.svg" width={45} height={45} alt="" />
 
-                <div>
-                  <h2
-                    className={`${
-                      theme ? "text-[#1F1F1F]" : "text-[#E0E0E0]"
-                    } font-semibold text-sm leading-5`}
-                  >
-                    Andy Warhol
-                  </h2>
-                  <p className="text-xs text-[#5E6E78] font-medium leading-5">
-                    andywarhol@mail.com
-                  </p>
-                </div>
-                <img
-                  src="/icons/dots.svg"
-                  alt=""
-                  className="cursor-pointer transofrm rotate-90"
-                />
+              <div>
+                <h2
+                  className={`${
+                    theme ? "text-[#1F1F1F]" : "text-[#E0E0E0]"
+                  } font-semibold text-sm leading-5`}
+                >
+                  Andy Warhol
+                </h2>
+                <p className="text-xs text-[#5E6E78] font-medium leading-5">
+                  andywarhol@mail.com
+                </p>
               </div>
+              <img
+                src="/icons/dots.svg"
+                alt=""
+                className="cursor-pointer transofrm rotate-90"
+              />
             </div>
           </div>
         </div>

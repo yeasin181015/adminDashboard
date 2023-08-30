@@ -3,6 +3,7 @@ import ReactApexChart from "react-apexcharts";
 import { chartData } from "../../utils/dataChart";
 import { numericConverter, percetageToValue } from "../../utils/incOrdec";
 import ColorContext from "../../context/ColorContext";
+import DropDownIcon from "../../icons/dropDown";
 
 const marketItems = [
   {
@@ -87,7 +88,7 @@ const ChartDiv = () => {
         <div
           className={`${
             theme ? "bg-white" : "bg-[#1C1C25]"
-          } grid grid-rows-5  rounded-2xl p-8`}
+          } grid grid-rows-5 rounded-2xl p-8`}
         >
           <div className="row-span-1 flex justify-between items-start">
             <div className="flex justify-center items-center ">
@@ -113,18 +114,23 @@ const ChartDiv = () => {
                     Bitcoin
                   </p>
                 </div>
-                <div>
-                  <p
-                    className={`${
-                      theme ? "text-black" : "text-white"
-                    } font-semibold text-xl`}
-                  >
-                    $23,738
-                  </p>
-                  <div className="rounded-full bg-customGreen w-16 h-7 flex justify-center items-center">
-                    <p className="text-[#219653] text-xs font-semibold">
-                      +23.6%
+                <div className="flex items-center space-x-2">
+                  <div>
+                    <p
+                      className={`${
+                        theme ? "text-black" : "text-white"
+                      } font-semibold text-lg`}
+                    >
+                      $23,738
                     </p>
+                    <div className="rounded-full bg-customGreen w-16 h-7 flex justify-center items-center">
+                      <p className="text-[#219653] text-xs font-semibold">
+                        +23.6%
+                      </p>
+                    </div>
+                  </div>
+                  <div className="cursor-pointer">
+                    <DropDownIcon />
                   </div>
                 </div>
               </div>
@@ -164,29 +170,35 @@ const ChartDiv = () => {
         } w-[35%] flex-col space-y-8  ml-4 rounded-2xl pr-8 pl-8 pt-8`}
       >
         <div className="flex items-center space-x-3 text-xs font-medium">
-          <h2
-            className={`${
-              theme ? "text-black" : "text-white"
-            } font-semibold text-xl leading-7 mr-4`}
-          >
-            Markets
-          </h2>
-          {filterTabs.map((item) => (
-            <p
-              onClick={() => setSelect(item)}
+          <div>
+            <h2
               className={`${
-                item === select
-                  ? "bg-customBlue text-[#0060FF]"
-                  : "bg-[#F8F8F9]"
-              } text-xs font-semibold rounded-lg px-4 leading-6 cursor-pointer`}
+                theme ? "text-black" : "text-white"
+              } font-semibold text-xl leading-7 mr-4`}
             >
-              {item}
-            </p>
-          ))}
+              Markets
+            </h2>
+          </div>
+          <div className="flex flex-wrap gap-y-2 xl:gap-x-5">
+            {filterTabs.map((item) => (
+              <div className="text-center">
+                <p
+                  onClick={() => setSelect(item)}
+                  className={`${
+                    item === select
+                      ? "bg-customBlue text-[#0060FF]"
+                      : "bg-[#F8F8F9]"
+                  } text-xs px-3 font-semibold rounded-lg leading-6 cursor-pointer`}
+                >
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           {marketItems.map((item, index) => (
-            <div key={index} className="grid grid-cols-4 mb-6">
+            <div key={index} className="grid grid-cols-4 mb-6 items-center">
               <div>
                 <h2
                   className={`${
@@ -216,7 +228,7 @@ const ChartDiv = () => {
                     percetageToValue(item.increment) > 0
                       ? "text-[#219653] bg-customGreen"
                       : "text-[#EB5757] bg-customRed"
-                  } w-[50%] rounded-full flex justify-center items-center`}
+                  } w-[70%] min-[1697px]:w-[50%] rounded-full flex justify-center items-center`}
                 >
                   <p className="text-xs font-semibold leading-5">
                     {item.increment}

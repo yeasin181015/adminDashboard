@@ -34,7 +34,7 @@ const items = [
 const UsdtDivs = () => {
   const { theme, setTheme } = useContext(ColorContext);
   return (
-    <div className="grid grid-cols-4 gap-x-8">
+    <div className="grid grid-cols-4 gap-x-4">
       <div
         className={`${
           theme ? "bg-white" : "bg-[#1C1C25]"
@@ -58,7 +58,7 @@ const UsdtDivs = () => {
         >
           $123,987
         </h2>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between space-x-2">
           <p className="text-[#626D7D] text-sm font-medium">Monthly Profit</p>
           <p className="text-[#219653] text-sm font-semibold leading-5">
             +$2560.78

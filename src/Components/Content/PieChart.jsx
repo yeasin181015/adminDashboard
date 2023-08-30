@@ -45,9 +45,9 @@ const PieChart = () => {
     <div
       className={`${
         theme ? "bg-white" : "bg-[#1C1C25]"
-      } col-span-1 rounded-2xl`}
+      } col-span-2 rounded-2xl`}
     >
-      <div className="p-6 h-full flex flex-col justify-between">
+      <div className="p-7 h-full flex flex-col justify-between">
         <div className="flex justify-between">
           <h2
             className={`${

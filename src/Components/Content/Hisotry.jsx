@@ -35,9 +35,9 @@ const History = () => {
     <div
       className={`${
         theme ? "bg-white " : "bg-[#1C1C25]"
-      }   col-span-2 rounded-2xl`}
+      }   col-span-3 rounded-2xl`}
     >
-      <div className="pr-6 pl-6 pt-6">
+      <div className="pr-7 pl-7 pt-7">
         <div className="flex justify-between items-center font-medium mb-8">
           <h2
             className={`${
@@ -81,7 +81,7 @@ const History = () => {
                     numericConverter(item.amount) >= 0
                       ? "text-[#219653]"
                       : "text-[#EB5757]"
-                  } col-span-2 text-xs leading-5 font-semibold flex justify-end`}
+                  } col-span-2 text-xs leading-5 font-semibold flex justify-end mr-2`}
                 >
                   {item.amount}
                 </div>
