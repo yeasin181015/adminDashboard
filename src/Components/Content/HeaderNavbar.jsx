@@ -3,11 +3,11 @@ import ColorContext from "../../context/ColorContext";
 
 const HeaderNavbar = () => {
   const { theme, setTheme } = useContext(ColorContext);
-  console.log(theme);
+
   return (
     <div className={`${theme ? "bg-white" : "bg-[#1C1C25]"}`}>
-      <div className="flex justify-between items-center p-4">
-        <div className="w-[40%]">
+      <div className="flex justify-center xs:justify-end md:justify-between items-center p-4">
+        <div className="w-[40%] hidden md:block">
           <div
             className={` px-6 border border-[#C4CACD] ${
               theme ? "border-opacity-40" : "border-opacity-10"
@@ -28,7 +28,7 @@ const HeaderNavbar = () => {
         </div>
 
         <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
+          <div className="hidden xs:flex xs:items-center xs:space-x-2">
             <label className={`${!theme ? "text-white" : "text-black"} mb-1`}>
               theme
             </label>
@@ -48,8 +48,13 @@ const HeaderNavbar = () => {
           </div>
           <div className={`${theme ? "bg-[#F2F8FF]" : "bg-black"} rounded-xl`}>
             <div className="flex items-center space-x-3 p-2">
-              <img src="/icons/profileIcon.svg" width={45} height={45} alt="" />
-
+              <div className="flex justify-center items-center">
+                <img
+                  src="/icons/profileIcon.svg"
+                  className="max-w-full h-auto"
+                  alt=""
+                />
+              </div>
               <div>
                 <h2
                   className={`${

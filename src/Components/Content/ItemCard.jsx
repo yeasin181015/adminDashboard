@@ -9,7 +9,7 @@ const ItemCard = ({ item }) => {
     <div
       className={`${
         theme ? "bg-white" : "bg-[#1C1C25]"
-      } col-span-1 flex flex-col space-y-7 rounded-xl p-6`}
+      } sm:col-span-1 flex flex-col space-y-7 rounded-xl p-6`}
     >
       <div className="grid grid-cols-4">
         <div className="col-span-2 flex flex-col space-y-5">

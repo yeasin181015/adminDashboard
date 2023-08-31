@@ -51,7 +51,7 @@ const Sidebar = () => {
     <div
       className={`${
         theme ? "bg-white" : "bg-[#1C1C25]"
-      } w-[15%] flex justify-center`}
+      }  hidden xs:w-[15%] xs:flex xs:justify-center`}
     >
       <div className="flex flex-col w-[75%] mt-8 space-y-16">
         <div className="flex flex-wrap items-center justify-center space-y-2 mt-4">

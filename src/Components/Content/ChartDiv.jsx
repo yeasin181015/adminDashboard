@@ -90,14 +90,14 @@ const ChartDiv = () => {
             theme ? "bg-white" : "bg-[#1C1C25]"
           } grid grid-rows-5 rounded-2xl p-8`}
         >
-          <div className="row-span-1 flex flex-col sm:flex-row justify-between items-start">
-            <div className="flex justify-center items-center ">
+          <div className="row-span-1 flex flex-col items-center space-y-2 sm:space-y-0 sm:flex-row sm:justify-between sm:items-start">
+            <div className="flex justify-center items-center">
               <div
                 className={`${
                   theme
                     ? "bg-opacity-50 bg-gray-100"
                     : "bg-[#121212] bg-opacity-50"
-                } flex space-x-24 p-4 rounded-xl`}
+                } flex space-x-12 sm:space-x-24 p-4 rounded-xl`}
               >
                 <div>
                   <h2
@@ -135,7 +135,7 @@ const ChartDiv = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex flex-wrap items-center space-x-3 space-y-1">
+            <div className="flex flex-wrap items-center space-x-3 space-y-1">
               {timeFilter.map((item, index) => (
                 <div
                   key={index}
@@ -165,12 +165,13 @@ const ChartDiv = () => {
           </div>
         </div>
       </div>
+
       <div
         className={`${
           theme ? "bg-white" : "bg-[#1C1C25]"
         } w-full lgxl:w-[35%] flex-col space-y-8  lgxl:ml-4 rounded-2xl p-8 lgxl:pr-8 lgxl:pl-8 lgxl:pt-8 lgxl:pb-0`}
       >
-        <div className="flex items-center space-x-3 text-xs font-medium">
+        <div className="flex flex-col space-y-3 xs:space-y-0 xs:flex-row xs:items-center xs:justify-between text-xs font-medium">
           <div>
             <h2
               className={`${
@@ -229,7 +230,7 @@ const ChartDiv = () => {
                     percetageToValue(item.increment) > 0
                       ? "text-[#219653] bg-customGreen"
                       : "text-[#EB5757] bg-customRed"
-                  } w-[40%] lgxl:w-[70%] rounded-full flex justify-center items-center`}
+                  } w-[90%] sm:w-[80%] md:w-[40%] lgxl:w-[70%] rounded-full flex justify-center items-center`}
                 >
                   <p className="text-xs font-semibold leading-5">
                     {item.increment}

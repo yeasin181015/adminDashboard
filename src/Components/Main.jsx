@@ -3,7 +3,7 @@ import HeaderNavbar from "./Content/HeaderNavbar";
 
 const Main = () => {
   return (
-    <div className="w-[85%]">
+    <div className="w-full xs:w-[85%]">
       <HeaderNavbar />
       <Dashboard />
     </div>

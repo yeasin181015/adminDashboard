@@ -38,11 +38,11 @@ const UsdtDivs = () => {
   const { theme, setTheme } = useContext(ColorContext);
   return (
     <div className="flex flex-col space-y-4 lgxl:space-y-0 lgxl:grid  lgxl:grid-cols-4 lgxl:gap-x-4">
-      <div className="lgxl:col-span-2 grid grid-cols-2 gap-x-6 ">
+      <div className="lgxl:col-span-2 flex flex-col space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 ">
         <div
           className={`${
             theme ? "bg-white" : "bg-[#1C1C25]"
-          } col-span-1 flex flex-col space-y-5 rounded-lg p-6`}
+          } sm:col-span-1 flex flex-col space-y-5 rounded-lg p-6`}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -82,7 +82,7 @@ const UsdtDivs = () => {
         <div
           className={`${
             theme ? "bg-white" : "bg-[#1C1C25]"
-          } col-span-1 flex flex-col space-y-7 rounded-xl p-6`}
+          } sm:col-span-1 flex flex-col space-y-7 rounded-xl p-6`}
         >
           <div className="grid grid-cols-4">
             <div className="col-span-2 flex flex-col space-y-5">
@@ -131,7 +131,7 @@ const UsdtDivs = () => {
         </div>
       </div>
 
-      <div className="lgxl:col-span-2 grid grid-cols-2 gap-x-6 ">
+      <div className="lgxl:col-span-2 flex flex-col space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 ">
         {items.map((item) => (
           <ItemCard item={item} />
         ))}
