@@ -40,7 +40,8 @@ const Sidebar = () => {
     },
   ];
 
-  const { theme, setTheme } = useContext(ColorContext);
+  const { theme, setTheme, isSidebarVisible, toggleSidebar } =
+    useContext(ColorContext);
   const [selectedTab, setSelectedTab] = useState("Dashboard");
 
   const handleClick = (tab) => {
@@ -49,11 +50,11 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`${
-        theme ? "bg-white" : "bg-[#1C1C25]"
-      }  hidden xs:w-[15%] xs:flex xs:justify-center`}
+      className={`${theme ? "bg-white" : "bg-[#1C1C25]"} ${
+        isSidebarVisible ? "block" : "hidden"
+      } xs:w-[15%] xs:flex xs:justify-center`}
     >
-      <div className="flex flex-col w-[75%] mt-8 space-y-16">
+      <div className="flex flex-col w-[75%] px-3 xs:px-0 mt-8 space-y-16">
         <div className="flex flex-wrap items-center justify-center space-y-2 mt-4">
           <img src={`/icons/${theme ? "Logo" : "darkLogo"}.svg`} alt="" />
           <h2 className="hidden sm:block text-lg md:text-xl leading-5">
@@ -81,7 +82,10 @@ const Sidebar = () => {
                       ? "text-black"
                       : "text-white"
                   }`}
-                  onClick={() => handleClick(item.name)}
+                  onClick={() => {
+                    handleClick(item.name);
+                    isSidebarVisible && toggleSidebar();
+                  }}
                 >
                   <div className="block md:hidden lg:block">
                     {" "}

@@ -1,12 +1,20 @@
 import { useContext } from "react";
 import ColorContext from "../../context/ColorContext";
+import SideBarIcon from "../../icons/sideBarIcon";
 
 const HeaderNavbar = () => {
-  const { theme, setTheme } = useContext(ColorContext);
+  const { theme, setTheme, isSidebarVisible, toggleSidebar } =
+    useContext(ColorContext);
 
   return (
     <div className={`${theme ? "bg-white" : "bg-[#1C1C25]"}`}>
-      <div className="flex justify-center xs:justify-end md:justify-between items-center p-4">
+      <div className="flex justify-between xs:justify-end md:justify-between items-center p-4">
+        <div
+          className={`${isSidebarVisible ? "hidden" : "block"} xs:hidden`}
+          onClick={toggleSidebar}
+        >
+          <SideBarIcon />
+        </div>
         <div className="w-[40%] hidden md:block">
           <div
             className={` px-6 border border-[#C4CACD] ${
