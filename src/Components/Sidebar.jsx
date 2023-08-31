@@ -54,9 +54,9 @@ const Sidebar = () => {
       } w-[15%] flex justify-center`}
     >
       <div className="flex flex-col w-[75%] mt-8 space-y-16">
-        <div className="flex items-center mt-4">
+        <div className="flex flex-wrap items-center justify-center space-y-2 mt-4">
           <img src={`/icons/${theme ? "Logo" : "darkLogo"}.svg`} alt="" />
-          <h2 className="text-xl leading-5">
+          <h2 className="hidden sm:block text-lg md:text-xl leading-5">
             <span className="ml-2 text-[#2F80ED] font-semibold">Blue</span>
             <span
               className={`${
@@ -72,7 +72,7 @@ const Sidebar = () => {
             {tabs.map((item) => (
               <>
                 <div
-                  className={`py-2 flex items-center justify-center rounded-lg cursor-pointer font-medium text-lg leading-5 ${
+                  className={`p-2 flex items-center justify-center rounded-lg cursor-pointer font-medium text-xs md:text-sm lg:text-md xl:text-lg leading-5 ${
                     selectedTab === item.name && theme
                       ? "bg-[#D5E6FB] text-[#0060FF]"
                       : selectedTab === item.name && !theme
@@ -83,14 +83,19 @@ const Sidebar = () => {
                   }`}
                   onClick={() => handleClick(item.name)}
                 >
-                  {item.icon &&
-                    React.cloneElement(item.icon, {
-                      selected: selectedTab === item.name,
-                      theme,
-                    })}
-                  <span className={`${item.name === "Help" ? "ml-2" : ""}`}>
-                    {item.name}
-                  </span>
+                  <div className="block md:hidden lg:block">
+                    {" "}
+                    {item.icon &&
+                      React.cloneElement(item.icon, {
+                        selected: selectedTab === item.name,
+                        theme,
+                      })}
+                  </div>
+                  <div className="hidden md:block">
+                    <span className={`${item.name === "Help" ? "ml-2" : ""}`}>
+                      {item.name}
+                    </span>
+                  </div>
                 </div>
                 {item.name === "Setting" && theme && (
                   <hr
@@ -113,15 +118,6 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {/* <style>
-        {`
-          .custom-border {
-            --border-thickness: 0.3px;
-            border-top: var(--border-thickness) solid #E8EAEC;
-            border-opacity: 78
-          }
-        `}
-      </style> */}
     </div>
   );
 };

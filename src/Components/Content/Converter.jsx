@@ -99,10 +99,12 @@ const Converter = () => {
             Convert Now
           </button>
         </div>
-        <p className="text-[#626D7D] leading-4 text-[8px] w-[300px]">
-          The ultimate price and output is determined by the amount of tokens in
-          the pool at the time of your swap.
-        </p>
+        <div>
+          <p className="text-[#626D7D] leading-4 text-[8px]">
+            The ultimate price and output is determined by the amount of tokens
+            in the pool at the time of your swap.
+          </p>
+        </div>
       </div>
     </div>
   );

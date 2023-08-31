@@ -35,9 +35,9 @@ const History = () => {
     <div
       className={`${
         theme ? "bg-white " : "bg-[#1C1C25]"
-      }   col-span-3 rounded-2xl`}
+      } w-[100%] lgxl:col-span-3 rounded-2xl`}
     >
-      <div className="pr-7 pl-7 pt-7">
+      <div className="p-7 pb-0">
         <div className="flex justify-between items-center font-medium mb-8">
           <h2
             className={`${
@@ -58,8 +58,8 @@ const History = () => {
         <div>
           {historyItems.map((item, index) => (
             <>
-              <div className="grid grid-cols-9 items-center gap-x-12 mb-4">
-                <div className="col-span-1">
+              <div className="grid grid-cols-11 items-center mb-4">
+                <div className="col-span-2">
                   <img
                     src={
                       numericConverter(item.amount) >= 0
@@ -81,7 +81,7 @@ const History = () => {
                     numericConverter(item.amount) >= 0
                       ? "text-[#219653]"
                       : "text-[#EB5757]"
-                  } col-span-2 text-xs leading-5 font-semibold flex justify-end mr-2`}
+                  } col-span-2 text-xs leading-5 font-semibold flex justify-end`}
                 >
                   {item.amount}
                 </div>
@@ -97,7 +97,7 @@ const History = () => {
                     item.status === "pending"
                       ? "text-[#F2994A] bg-yellow-400 bg-opacity-20"
                       : "text-[#219653] bg-green-600 bg-opacity-20"
-                  } col-span-2 text-xs leading-5 font-semibold text-center rounded-md`}
+                  } col-span-3 text-xs leading-5 font-semibold text-center rounded-md`}
                 >
                   <p className="p-2">{item.status}</p>
                 </div>

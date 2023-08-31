@@ -22,20 +22,44 @@ const PieChart = () => {
       },
     },
     legend: {
-      position: "bottom", // Place legend below the chart
-      markers: {
-        fillColors: ["#155AB6", "#00C4DF", "#B1D3FF", "#3380FF"],
+      show: true,
+      position: "bottom",
+      labels: {
+        colors: ["#155AB6", "#00C4DF", "#B1D3FF", "#3380FF"],
+        useSeriesColors: true,
       },
-      itemMargin: {
-        horizontal: 10, // Adjust margin between legend items
+      fontSize: "12px",
+      markers: {
+        width: 10,
+        height: 10,
+        radius: 0,
+        strokeWidth: 10,
+        strokeColor: "#fff",
+        fillColors: ["#155AB6", "#00C4DF", "#B1D3FF", "#3380FF"],
       },
     },
     responsive: [
       {
-        breakpoint: 480,
+        breakpoint: 786,
         options: {
           chart: {
-            width: 200,
+            width: 300,
+          },
+        },
+      },
+      {
+        breakpoint: 1320,
+        options: {
+          chart: {
+            width: 350,
+          },
+        },
+      },
+      {
+        breakpoint: 2000,
+        options: {
+          chart: {
+            width: 375,
           },
         },
       },
@@ -47,7 +71,7 @@ const PieChart = () => {
         theme ? "bg-white" : "bg-[#1C1C25]"
       } col-span-2 rounded-2xl`}
     >
-      <div className="p-7 h-full flex flex-col justify-between">
+      <div className="p-7 h-full flex flex-col">
         <div className="flex justify-between">
           <h2
             className={`${
@@ -60,7 +84,7 @@ const PieChart = () => {
             <img src="/icons/dots.svg" className="p-3 rounded-md" alt="" />
           </div>
         </div>
-        <div>
+        <div className="flex justify-center">
           <ReactApexChart options={options} series={series} type="donut" />
         </div>
       </div>

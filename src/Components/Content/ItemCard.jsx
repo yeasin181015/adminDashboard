@@ -41,13 +41,15 @@ const ItemCard = ({ item }) => {
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <p className="text-[#626D7D] text-sm font-medium">PIN Daily</p>
+        <p className="text-[#626D7D] text-xs xl:text-sm font-medium">
+          PIN Daily
+        </p>
         <p
           className={`${
             numericConverter(item.change) >= 0
               ? "text-[#219653]"
               : "text-[#EB5757]"
-          } text-sm font-semibold leading-5`}
+          } text-xs xl:text-sm font-semibold leading-5`}
         >
           {item.change}
         </p>
@@ -60,3 +62,5 @@ const ItemCard = ({ item }) => {
 };
 
 export default ItemCard;
+
+

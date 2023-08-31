@@ -83,14 +83,14 @@ const ChartDiv = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="w-[65%]">
+    <div className="flex flex-col space-y-4 lgxl:space-y-0 lgxl:flex-row">
+      <div className="w-full lgxl:w-[65%]">
         <div
           className={`${
             theme ? "bg-white" : "bg-[#1C1C25]"
           } grid grid-rows-5 rounded-2xl p-8`}
         >
-          <div className="row-span-1 flex justify-between items-start">
+          <div className="row-span-1 flex flex-col sm:flex-row justify-between items-start">
             <div className="flex justify-center items-center ">
               <div
                 className={`${
@@ -135,9 +135,10 @@ const ChartDiv = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex items-center space-x-3">
-              {timeFilter.map((item) => (
+            <div className="mt-4 flex flex-wrap items-center space-x-3 space-y-1">
+              {timeFilter.map((item, index) => (
                 <div
+                  key={index}
                   onClick={() => setTime(item)}
                   className={`${
                     item === time
@@ -147,7 +148,7 @@ const ChartDiv = () => {
                       : "text-white"
                   } font-meidum text-xs rounded-lg px-4 leading-6 cursor-pointer ${
                     theme ? "bg-[#F8F8F9]" : "bg-[#131313]"
-                  }`}
+                  } ${index === 0 ? "ml-3" : ""}`}
                 >
                   {item}
                 </div>
@@ -167,7 +168,7 @@ const ChartDiv = () => {
       <div
         className={`${
           theme ? "bg-white" : "bg-[#1C1C25]"
-        } w-[35%] flex-col space-y-8  ml-4 rounded-2xl pr-8 pl-8 pt-8`}
+        } w-full lgxl:w-[35%] flex-col space-y-8  lgxl:ml-4 rounded-2xl p-8 lgxl:pr-8 lgxl:pl-8 lgxl:pt-8 lgxl:pb-0`}
       >
         <div className="flex items-center space-x-3 text-xs font-medium">
           <div>
@@ -179,7 +180,7 @@ const ChartDiv = () => {
               Markets
             </h2>
           </div>
-          <div className="flex flex-wrap gap-y-2 xl:gap-x-5">
+          <div className="flex flex-wrap gap-y-2 xl:gap-x-4">
             {filterTabs.map((item) => (
               <div className="text-center">
                 <p
@@ -228,7 +229,7 @@ const ChartDiv = () => {
                     percetageToValue(item.increment) > 0
                       ? "text-[#219653] bg-customGreen"
                       : "text-[#EB5757] bg-customRed"
-                  } w-[70%] min-[1697px]:w-[50%] rounded-full flex justify-center items-center`}
+                  } w-[40%] lgxl:w-[70%] rounded-full flex justify-center items-center`}
                 >
                   <p className="text-xs font-semibold leading-5">
                     {item.increment}
